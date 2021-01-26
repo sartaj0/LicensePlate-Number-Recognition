@@ -5,7 +5,7 @@ import os
 from tensorflow.keras.models import load_model
 
 #model = load_model(os.path.sep.join(["E:", "Models", "DeepLearning", "ObjectDetection", "LicensePlate", "recognition_100x100x3.h5"]))
-model = load_model(os.path.sep.join(["E:", "Models", "DeepLearning", "ObjectDetection", "LicensePlate", "model.h5"]))
+model = load_model("model.h5")
 labels = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
@@ -71,10 +71,10 @@ def detect(image, net, ln, Labels, colors, drawBox=True, return_cords=False, min
     elif not drawBox and return_cords:
         return coords_boxes
 
-configPath = os.path.sep.join(["E:", "Models", "DeepLearning", "ObjectDetection", "LicensePlate", "yolov3_tiny_custom.cfg"])
+configPath = "yolov3_tiny_custom.cfg"
 
-weightsPath1 = os.path.sep.join(["E:", "Models", "DeepLearning", "ObjectDetection", "LicensePlate", "licenseplate_detection.weights"])
-weightsPath2 = os.path.sep.join(["E:", "Models", "DeepLearning", "ObjectDetection", "LicensePlate", "character_detection.weights"])
+weightsPath1 = "licenseplate_detection.weights"
+weightsPath2 =  "character_detection.weights"
 
 net1 = cv2.dnn.readNetFromDarknet(configPath, weightsPath1)
 net2 = cv2.dnn.readNetFromDarknet(configPath, weightsPath2)
