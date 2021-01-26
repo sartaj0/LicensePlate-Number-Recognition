@@ -12,7 +12,7 @@ train_datagen = ImageDataGenerator(rescale=1./255,
     zoom_range=0.2,
     validation_split=0.2) # set validation split
 
-train_path = os.path.sep.join(["E:", "dataset", "LicensePlateDetector", "CNN_letters_Dataset"])
+train_path = "CNN_letters_Dataset"
 
 train_generator = train_datagen.flow_from_directory(
     train_path,
